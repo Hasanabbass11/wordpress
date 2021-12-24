@@ -3675,9 +3675,9 @@ class wpdb {
 	 */
 	public function db_server_info() {
 		if ( $this->use_mysqli ) {
-			$server_info = mysqli_get_server_info( $this->dbh );
+		//	$server_info = mysqli_get_server_info( $this->dbh );
 		} else {
-			$server_info = mysql_get_server_info( $this->dbh );
+		//	$server_info = mysql_get_server_info( $this->dbh );
 		}
 
 		return $server_info;
