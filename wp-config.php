@@ -20,22 +20,28 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'blog' );
+// * Heroku Postgres settings - from Heroku Environment * //
+$db = parse_url($_ENV["DATABASE_URL"]);
 
-/** MySQL database username */
-define( 'DB_USER', 'root' );
+// * MySQL settings - You can get this info from your web host * //
+/* The name of the database for WordPress /
+define('DB_NAME', trim($db["path"],"/"));
 
-/** MySQL database password */
-define( 'DB_PASSWORD', '' );
+/* MySQL database username /
+define('DB_USER', $db["user"]);
 
-/** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
+/* MySQL database password /
+define('DB_PASSWORD', $db["pass"]);
 
-/** Database charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8mb4' );
+/* MySQL hostname /
+define('DB_HOST', $db["host"]);
 
-/** The database collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '' );
+/* Database Charset to use in creating database tables. /
+define('DB_CHARSET', 'utf8');
+
+/* The Database Collate type. Don't change this if in doubt. /
+define('DB_COLLATE', '');
+
 
 /**#@+
  * Authentication unique keys and salts.
