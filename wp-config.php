@@ -20,28 +20,22 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-// * Heroku Postgres settings - from Heroku Environment * //
-$db = parse_url($_ENV["DATABASE_URL"]);
+define( 'DB_NAME', 'blog' );
 
-// * MySQL settings - You can get this info from your web host * //
-/* The name of the database for WordPress /
-define('DB_NAME', trim($db["path"],"/"));
+/** MySQL database username */
+define( 'DB_USER', 'root' );
 
-/* MySQL database username /
-define('DB_USER', $db["user"]);
+/** MySQL database password */
+define( 'DB_PASSWORD', '' );
 
-/* MySQL database password /
-define('DB_PASSWORD', $db["pass"]);
+/** MySQL hostname */
+define( 'DB_HOST', 'localhost' );
 
-/* MySQL hostname /
-define('DB_HOST', $db["host"]);
+/** Database charset to use in creating database tables. */
+define( 'DB_CHARSET', 'utf8mb4' );
 
-/* Database Charset to use in creating database tables. /
-define('DB_CHARSET', 'utf8');
-
-/* The Database Collate type. Don't change this if in doubt. /
-define('DB_COLLATE', '');
-
+/** The database collate type. Don't change this if in doubt. */
+define( 'DB_COLLATE', '' );
 
 /**#@+
  * Authentication unique keys and salts.
@@ -85,7 +79,7 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', true );
+define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
